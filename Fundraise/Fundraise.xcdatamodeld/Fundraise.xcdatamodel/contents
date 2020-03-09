@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D49f" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Donation" representedClassName="Donation" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="recipient" optional="YES" attributeType="String"/>
+        <relationship name="donor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Donor" inverseName="donations" inverseEntity="Donor"/>
+    </entity>
+    <entity name="Donor" representedClassName="Donor" syncable="YES" codeGenerationType="class">
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="employer" optional="YES" attributeType="String"/>
+        <attribute name="hasContacted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="hasDonated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="profession" optional="YES" attributeType="String"/>
+        <attribute name="state" optional="YES" attributeType="String"/>
+        <attribute name="streetAddress" optional="YES" attributeType="String"/>
+        <attribute name="zip" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="donations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Donation" inverseName="donor" inverseEntity="Donation"/>
+    </entity>
+    <elements>
+        <element name="Donation" positionX="-54" positionY="54" width="128" height="103"/>
+        <element name="Donor" positionX="-63" positionY="-18" width="128" height="193"/>
+    </elements>
+</model>
